@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <style>
+        .로그인_양식 {
+          width: 300px;
+          height: 400px;
+          margin-top: 50px;
+          margin-left: 40%;
+          text-align: center;
+          border: 2px solid gray;
+        }
+        .로그인_글자 {
+          margin-top: 64px;
+          margin-bottom: 46px;
+        }
+        .아이디_입력, .비밀번호_입력 {
+          margin-bottom: 14px;
+          width: 180px;
+          height: 26px;
+          border: 0;
+          border-bottom: 1px solid lightgray;
+        }
+        .로그인_버튼 {
+          margin-top: 40px;
+          border: 0;
+          height: 24px;
+          width: 120px;
+          cursor: pointer;
+        }
+        .로그인_버튼:hover{
+            background-color:darkgray;
+        }
+        .회원가입_버튼 {
+          margin-top: 8px;
+          border: 0;
+          height: 24px;
+          width: 120px;
+          cursor: pointer;
+        }
+        .회원가입_버튼:hover{
+            background-color:darkgray;
+        }
+      </style>
+</head>
+<body>
+    <div class="로그인_양식">
+        <h1 class="로그인_글자">로그인</h1>
+        <input class="아이디_입력" type="text" placeholder="아이디">
+        <input class="비밀번호_입력" type="password" placeholder="비밀번호"><br>
+        <button class="로그인_버튼" onclick="버튼클릭()">로그인</button><br>
+        <button class="회원가입_버튼" onclick="location.href='03회원가입.html'">회원가입</button>
+    </div>
+</body>
+<script>
+  function 버튼클릭(){
+    let 아이디_입력 = document.querySelector('.아이디_입력').value;
+    let 비밀번호_입력=document.querySelector('.비밀번호_입력').value;
+
+    if (아이디_입력 && 비밀번호_입력){
+      location.href='./index.html'
+    }
+    else if (아이디_입력 && !비밀번호_입력){
+      alert("비밀번호를 입력해 주세요.")
+    }
+    else if (!아이디_입력 && 비밀번호_입력){
+      alert("아이디를 입력해 주세요.")
+    }
+    else {
+      alert("아이디와 비밀번호를 확인해주세요.")
+    }
+  }
+</script>
+</html>
